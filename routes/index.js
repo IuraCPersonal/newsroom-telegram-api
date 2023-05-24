@@ -1,14 +1,10 @@
 const { default: axios } = require("axios");
-const express = require("express");
 const { Telegraf } = require("telegraf");
 const Messages = require("../utils/messages");
 
-console.log(Messages);
-
-const router = express.Router();
 require("dotenv").config();
 
-const bot = new Telegraf(process.env.BOT_TOKEN);
+const bot = new Telegraf(process.env.BOT_TOKEN, { polling: false });
 
 // console.log(process.env.BOT_TOKEN);
 
